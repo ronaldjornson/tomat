@@ -1,15 +1,49 @@
 #!/bin/bash
 #
 # A Script to make alerts for pomodoro sessions.
-#
 
-sleep 1500 \
+zenity --warning --text="Begin your work!" \
+  && sleep 1500 \
   && notify-send "break" \
-  && sleep 3 \
-  && zenity --warning --text="25 minutes passed" \
+  && sleep 2 \
+  && zenity --warning --text="First pomodoro session done. Take a short break" \
   && sleep 300 \
-  && notify-send "Break over!" \
-  && sleep 3 \
-  && zenity --warning --text="Break is over. Time to work again!"
-
-
+  && notify-send "Work" \
+  && sleep 2 \
+  && zenity --warning --text="Break is over. Time to work again!" \
+  && sleep 1500 \
+  && notify-send "Break" \
+  && sleep 2 \
+  && zenity --warning --text="Second pomodoro session done. Take a short break" \
+  && sleep 300 \
+  && notify-send "Work" \
+  && sleep 2 \
+  && zenity --warning --text="Break is over. Time to work again!" \
+  && sleep 1500 \
+  && notify-send "Break" \
+  && sleep 2 \
+  && zenity --warning --text="Third pomodoro session done. Take a longer break" \
+  && sleep 900 \
+  && notify-send "Work" \
+  && sleep 2 \
+  && zenity --warning --text="Begin your fourth pomodoro session!" \
+  && sleep 1500 \
+  && notify-send "Break" \
+  && sleep 2 \
+  && zenity --warning --text="Fourth pomodoro session done. Take a short break" \
+  && sleep 300 \
+  && notify-send "Work" \
+  && sleep 2 \
+  && zenity --warning --text="Break is over. Time to work again!" \
+  && sleep 1500 \
+  && notify-send "Break" \
+  && sleep 2 \
+  && zenity --warning --text="Fifth pomodoro session done. Take a short break" \
+  && sleep 300 \
+  && notify-send "Work" \
+  && sleep 2 \
+  && zenity --warning --text="Break is over. Time to do your last bit of work!" \
+  && sleep 1500 \
+  && notify-send "Break" \
+  && sleep 2 \
+  && zenity --warning --text="Well done. You are done for the day. Now go enjoy it!"
