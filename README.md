@@ -12,6 +12,11 @@
   Tomat is danish (my mother's tongue) for tomato or in italian pomodoro.
 
 
+### TODO
+
+  The script is long and ugly with many repeats. I am using this project as a learning experience and will clean up the script in due course.
+
+ 
 ## Credits
 
 * pomodoro technique - https://en.wikipedia.org/wiki/Pomodoro_Technique
