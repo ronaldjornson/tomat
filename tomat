@@ -1,6 +1,12 @@
 #!/bin/bash
 #
+# up
 # A Script to make alerts for pomodoro sessions.
+# Copyright (C) 2023-2024 Ronald Jørnsøn
+# 45grn6meov@runbox.email
+# SPDX-License_Identifier: GPL-3.0-or-later
+# https://www.gnu.org/licenses/gpl-3.0-standalone.html
+# Version: 0.1.1.0
 
 zenity --warning --text="Begin your work!" \
   && sleep 1500 \
