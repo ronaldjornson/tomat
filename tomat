@@ -9,9 +9,10 @@
 # Version: 0.1.2.1
 
 echo "How many pomodoro sessions do you want to do? (input 1-10)"
-read=sessions
+read sessions
 
-[[ $sessions =~ ^[0-9]+$ ]]
+[[ $sessions == ?(-)+([0-9]) ]] && echo "$1 is an integer"
+#[[ $sessions =~ ^[0-9]+$ ]]
 [ $sessions -le 10 ] || echo "You've made an invalid input. "
 
 exit
