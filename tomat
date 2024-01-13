@@ -11,9 +11,26 @@
 echo "How many pomodoro sessions do you want to do? (input 1-10)"
 read sessions
 
-[[ $sessions == ?(-)+([0-9]) ]] && echo "$1 is an integer"
-#[[ $sessions =~ ^[0-9]+$ ]]
-[ $sessions -le 10 ] || echo "You've made an invalid input. "
+if [[ $sessions != ?(-)+([0-9]) ]] ; then
+  echo "$1 is an invalid input type."
+  exit 3
+fi
+
+if [ $sessions -gt 10 ] 2>/dev/null || [ $sessions -eq 0 ] 2>/dev/null ; then
+  echo "Your input is out of range."
+  exit 4
+fi
+
+zenity --warning --text="Begin your work!" \
+
+sleep 1500 \
+  && notify-send "break" \
+  && sleep 2 \
+  && zenity --warning --text="First pomodoro session done. Take a short break" \
+  && sleep 300 \
+  && notify-send "Work" \
+  && sleep 2 \
+  && zenity --warning --text="Break is over. Time to work again!" 
 
 exit
 #----------------------------
