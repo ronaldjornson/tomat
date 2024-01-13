@@ -25,14 +25,22 @@ fi
 
 zenity --warning --text="Begin your work!" \
 
-sleep 1500 \
-  && notify-send "break" \
+until [ $sessions -le 0 ] ; do
+  sleep 1500 \
+  && notify-send "Break" \
   && sleep 2 \
-  && zenity --warning --text="First pomodoro session done. Take a short break" \
+  && zenity --warning --text="Pomodoro session done. Take a short break" \
   && sleep 300 \
   && notify-send "Work" \
   && sleep 2 \
-  && zenity --warning --text="Break is over. Time to work again!" 
+  let "sessions=sessions-1"
+  if [ $sessions -le 0 ]; then
+    break
+  fi
+  zenity --warning --text="Break is over. Time to work again!" 
+done
+
+zenity --warning --text="Well done. You are done for the day. Now go enjoy it!"
 
 exit
 #----------------------------
